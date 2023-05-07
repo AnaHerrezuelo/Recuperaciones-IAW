@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        header{
+            position: relative;
+            margin-top: 0;
+            background-color: gray;
+            width: 100%;
+            height: 100px;
+        }
+
+        .fondo{
+            background-color: rgb(0,0,255);
+            float: left;
+            width: 50%;
+            height: 100px;
+            text-align: center;
+        }
+        .mosca{
+            background-color: red;
+            float: right;
+            width: 50%;
+            height: 100px;
+            text-align: center;
+        }
+
+
+        #espacio{
+            width: 100%;
+            height: 100vh;
+            background-color: violet;
+        }
+
+        img{
+            height: 20vh;
+            width: auto;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="fondo">
+            <h2> Fondo</h2>
+            <form>
+                <label for="rojo"> Rojo </label>
+                <input type="number" name="rojo" id="rojo" min="128" max="255">
+
+                <label for="azul"> Azul </label>
+                <input type="number" name="azul" id="azul" min="128" max="255">
+
+                <label for="verde"> Verde </label>
+                <input type="number" name="verde" id="verde" min="128" max="255">
+            </form>
+        </div>
+        <div class="mosca">
+            <h2> Mosca </h2>
+            <form>
+                <label for="posx"> Posición X </label>
+                <input type="number" name="posx" id="posx">
+
+                <label for="posy"> Posición Y </label>
+                <input type="number" name="posx" id="posy"> <br>
+
+                <label for="rotacion"> Rotacion </label>
+                <input type="number" name="rotacion" id="rotacion">
+
+                <button> Añadir una nueva </button>
+            </form>
+        </div>
+
+    </header>
+
+    <div id="espacio">
+        <img id="mosca" src="mosca.png">
+
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function (e){
+            let fondo=document.getElementById("espacio");
+
+            let rojo =document.getElementById("rojo");
+            let azul =document.getElementById("azul");
+            let verde =document.getElementById("verde");
+
+            fondo.addEventListener("click", function (e){
+               //fondo.style.backgroundColor="green";
+            });
+
+            rojo.addEventListener("click", function (e){
+                valor_rojo=rojo.value;
+                //fondo.style.backgroundColor= rgb(valor_rojo,0,0);
+                printf(valor_rojo);
+            });
+
+
+            let posx =document.getElementById("posx");
+            let posy =document.getElementById("posy");
+            let mosca=document.getElementById("mosca");
+
+
+        });
+    </script>
+
+</body>
+</html>
